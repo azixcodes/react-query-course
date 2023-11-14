@@ -1,7 +1,12 @@
-import React from "react";
-
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Root from "./components/Root";
 const App = () => {
-  return <div className="text-red-500">App</div>;
+  const queryClient = new QueryClient();
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Root />
+    </QueryClientProvider>
+  );
 };
 
 export default App;
